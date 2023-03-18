@@ -17,8 +17,8 @@ const Navbar = () => {
               onClick={()=> {
                 setActive('');
                 window.scrollTo(0,0)}}>
-          <img src={logo} alt="Logo" className='w-16 h-16 object-contain'/>
-          <p className='text-white text-[20px] font-medium cursor-poiner flex'>Sergey Burdakov &nbsp;<span className='lg:block hidden'>| Sotfware Developer</span></p>
+          <img src={logo} alt="Logo" className='w-12 h-12 object-contain'/>
+          <p className='text-white text-[24px] font-medium cursor-poiner flex'>Sergey Burdakov &nbsp;<span className='lg:block hidden'>| Sotfware Developer</span></p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">
           {navLinks.map((link) => (
