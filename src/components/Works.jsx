@@ -1,46 +1,49 @@
 import React from "react";
-import Tilt from "react-tilt";
+import Tilt from "react-tilt/";
 import { motion } from "framer-motion";
+import { Link } from 'react-router-dom';
 
 import { styles } from "../styles";
-import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
-const ProjectCard = ({index, image, name, description,tags}) => {
+const ProjectCard = ({index, logo, name, shortdescription,tags}) => {
   return (
+
     <Tilt className="w-full">
       <motion.div 
         variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
         className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
       >
-        <div 
-          options={{max:45, scale:1, speed:450}}
-          className="bg-tertiary rounded-[20px] py-5 px-3 min-h-[280px] flex justify-evenly items-center flex-col"
-        >
-          <div className='relative w-full  flex justify-center items-end '>
-            <img
-              src={image}
-              alt='project_image'
-              className='w-[160px] h-[160px] rounded-2xl'
-            />
+        <Link to='signtist'>
+          <div 
+            options={{max:45, scale:1, speed:450}}
+            className="bg-tertiary rounded-[20px] py-5 px-3 min-h-[280px] flex justify-evenly items-center flex-col"
+          >
+            <div className='relative w-full  flex justify-center items-end '>
+              <img
+                src={logo}
+                alt='project_image'
+                className='w-[160px] h-[160px] rounded-2xl'
+              />
+            </div>
+            <div className='mt-5'>
+              <h3 className='text-white text-center font-bold text-[24px]'>{name}</h3>
+              <p className='mt-2 text-secondary text-[14px]'>{shortdescription}</p>
+            </div>
+            <div className='mt-4 flex flex-wrap gap-2 w-[100%]'>
+              {tags.map((tag) => (
+                <p
+                  key={`${name}-${tag.name}`}
+                  className={`text-[14px] ${tag.color}`}
+                >
+                  #{tag.name}
+                </p>
+              ))}
+            </div>
           </div>
-          <div className='mt-5'>
-            <h3 className='text-white text-center font-bold text-[24px]'>{name}</h3>
-            <p className='mt-2 text-secondary text-[14px]'>{description}</p>
-          </div>
-          <div className='mt-4 flex flex-wrap gap-2 w-[100%]'>
-            {tags.map((tag) => (
-              <p
-                key={`${name}-${tag.name}`}
-                className={`text-[14px] ${tag.color}`}
-              >
-                #{tag.name}
-              </p>
-            ))}
-          </div>
-        </div>
+        </Link>
       </motion.div>
     </Tilt>
   );

@@ -1,21 +1,17 @@
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { About, Contact, Hero, Navbar, Works, StarsCanvas } from "./components";
+import Layout from "./components/Layout";
+import Home from "./Home";
+import Signtist from "./components/projects/Signtist";
 
 const App = () => (
   <BrowserRouter>
-    <div className='relative z-0 bg-primary'>
-      <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
-        <Navbar />
-        <Hero />
-      </div>
-      <About />
-      <Works /> 
-      <div className='relative z-0'>
-        <Contact />
-        <StarsCanvas />
-      </div>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="signtist" element={<Signtist />} />
+      </Route>
+    </Routes>
   </BrowserRouter>
 )
 

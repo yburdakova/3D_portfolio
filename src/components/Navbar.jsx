@@ -24,7 +24,7 @@ const Navbar = () => {
           {navLinks.map((link) => (
             <li className={`${active === link.title ? 'text-white' : 'text-secondary'} hover:text-white text-[18px] font-medium cursor-pointer`} 
                 key={link.id}
-                onClick={()=>setActive(link.title)}><a href={`#${link.id}`} className="">{link.title}</a></li>
+                onClick={()=>setActive(link.title)}><a href={`/#${link.id}`} className="">{link.title}</a></li>
           ))}
         </ul>
         <div className="sm:hidden flex flex-1 justify-end items-center">
@@ -40,7 +40,7 @@ const Navbar = () => {
                     key={link.id}
                     onClick={()=>{
                       setActive(link.title);
-                      setToggle(!toggle)}}><a href={`#${link.id}`} className="">{link.title}</a></li>
+                      setToggle(!toggle)}}><a href={`/#${link.id}`} className="">{link.title}</a></li>
                     ))}
             </ul>
           </div>

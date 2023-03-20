@@ -1,22 +1,19 @@
 import {
-    mobile,
-    backend,
-    creator,
-    web,
-    html,
-    css,
     git,
     figma,
-    signtist,
     swift,
     phyton,
-    uikit2,
     XCode,
     django,
-    adobe,
+
+    signtist_logo,
+    singtist_scr01,
+    singtist_scr02,
+    singtist_scr03,
+    singtist_scr04,
 } from "../assets";
 
-export const navLinks = [
+const navLinks = [
     {
       id: "about",
       title: "About",
@@ -25,35 +22,13 @@ export const navLinks = [
       id: "work",
       title: "Projects",
     },
-    // {
-    //   id: "feedback",
-    //   title: "Feedback",
-    // },
+
     {
       id: "contact",
       title: "Contact",
     },
+  ];
 
-  ];
-  
-  const services = [
-    {
-      title: "Web Developer",
-      icon: web,
-    },
-    {
-      title: "iOS Developer",
-      icon: mobile,
-    },
-    {
-      title: "Backend Developer",
-      icon: backend,
-    },
-    {
-      title: "Content Creator",
-      icon: creator,
-    },
-  ];
   
   const technologies = [
     
@@ -65,10 +40,6 @@ export const navLinks = [
       name: "Phyton",
       icon: phyton,
     },
-    // {
-    //   name: "UIKit",
-    //   icon: uikit2,
-    // },
     {
       name: "XCode",
       icon: XCode,
@@ -81,23 +52,10 @@ export const navLinks = [
       name: "git",
       icon: git,
     },
-    // {
-    //   name: "HTML 5",
-    //   icon: html,
-    // },
-    // {
-    //   name: "CSS 3",
-    //   icon: css,
-    // },
-    // {
-    //   name: "Adobe",
-    //   icon: adobe,
-    // },
     {
       name: "figma",
       icon: figma,
     },
-
   ];
   
   
@@ -131,64 +89,25 @@ export const navLinks = [
   const projects = [
     {
       name: "Signtist",
-      description:
+      shortdescription:
         "The iOS App helps users learn about road signs through a user-friendly interface, including a comprehensive list of signs, illustrations, and quizzes. Users can improve their road safety and driving skills using this App.",
-      tags: [
-        {
-          name: "iOS",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "Swift",
-          color: "green-text-gradient",
-        },
+      fulldescription:
+        "An iOS app for learning road signs developed using Swift is a mobile application that helps users learn about various road signs and their meanings. This app can be used by individuals who are learning to drive or those who simply want to refresh their knowledge of road signs. The app is designed with a user-friendly interface and includes a comprehensive list of road signs along with their descriptions and illustrations. The app allows users to take quizzes to test their knowledge of the different road signs and provides feedback on their progress. With this app, users can improve their road safety and driving skills.",
+      
+        tags: [
+          {
+              name: "iOS",
+              color: "blue-text-gradient",
+          },
+          {
+              name: "swift",
+              color: "green-text-gradient",
+          },
       ],
-      image: signtist,
+      logo: signtist_logo,
       source_code_link: "https://github.com/boomag77/USDriver",
-      pp_link: "https://sb.burdakova.com//ppdocs/Sign.pdf"
+      images: [singtist_scr01, singtist_scr02, singtist_scr03],
     },
-    // {
-    //   name: "Job IT",
-    //   description:
-    //     "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    //   tags: [
-    //     {
-    //       name: "react",
-    //       color: "blue-text-gradient",
-    //     },
-    //     {
-    //       name: "restapi",
-    //       color: "green-text-gradient",
-    //     },
-    //     {
-    //       name: "scss",
-    //       color: "pink-text-gradient",
-    //     },
-    //   ],
-    //   image: jobit,
-    //   source_code_link: "https://github.com/",
-    // },
-    // {
-    //   name: "Trip Guide",
-    //   description:
-    //     "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    //   tags: [
-    //     {
-    //       name: "nextjs",
-    //       color: "blue-text-gradient",
-    //     },
-    //     {
-    //       name: "supabase",
-    //       color: "green-text-gradient",
-    //     },
-    //     {
-    //       name: "css",
-    //       color: "pink-text-gradient",
-    //     },
-    //   ],
-    //   image: tripguide,
-    //   source_code_link: "https://github.com/",
-    // },
   ];
   
-  export { services, technologies, projects };
+  export { navLinks, technologies, projects };
